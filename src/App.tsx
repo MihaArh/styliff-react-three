@@ -32,7 +32,7 @@ const App = function () {
       <axesHelper scale={500} />
       <Stats />
       <Cube />
-      <Balls count={1} />
+      <Balls count={100} />
     </Canvas>
   );
 };
