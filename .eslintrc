@@ -1,7 +1,14 @@
 {
-  "extends": ["react-app", "airbnb"],
+  "extends": ["react-app", "airbnb", "airbnb-typescript"],
   "rules": {
     "no-shadow": "off", // replaced by ts-eslint rule below
-    "@typescript-eslint/no-shadow": "error"
+    "@typescript-eslint/no-shadow": "error",
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    // note you must disable the base rule as it can report incorrect errors
+    "no-use-before-define": "off",
+    "no-console": "off"
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json"
   }
 }
