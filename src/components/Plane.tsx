@@ -7,7 +7,7 @@ const Plane = function ({ color, ...props }: PlaneProps) {
   return (
     <mesh {...props} receiveShadow>
       <planeBufferGeometry attach="geometry" args={[100, 100]} />
-      <meshLambertMaterial attach="material" color={color} wireframe />
+      <meshLambertMaterial attach="material" color="green" wireframe />
     </mesh>
   );
 };
