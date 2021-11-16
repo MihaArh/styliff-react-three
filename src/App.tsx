@@ -2,7 +2,7 @@ import React from 'react';
 import './App.scss';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Stats } from '@react-three/drei';
-import Plane from './components/Plane';
+import Cube from './components/Cube';
 
 const App = function () {
   return (
@@ -31,11 +31,7 @@ const App = function () {
       <pointLight position={[-30, 0, -30]} intensity={0.5} />
       <axesHelper scale={500} />
       <Stats />
-      <Plane
-        color="blue"
-        position={[50, 0, 50]}
-        rotation={[-Math.PI / 2, 0, 0]}
-      />
+      <Cube />
     </Canvas>
   );
 };
