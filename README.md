@@ -1,10 +1,16 @@
-# Getting Started with Create React App
+# Styliff Coding Task
+
+This is a project for displaying my knowlage about React and react-three-fiber. It's a simple project where the goal was to display a few hundred objects of the same shape that are moving in an enclosed space. The size and speed of the objects should be randomized. Objects should not leave the confines and should bounce off the wall of the perimeter. Object should also get highlighted (solid colour or some custom shader) when user moves his/her mouse over it.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Project setup
 
 In the project directory, you can run:
+
+### `npm install`
+
+Install all the dependencies that are needed to run the project. Dependencies are listed in package.json.
 
 ### `npm start`
 
@@ -39,8 +45,10 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### `npm run lint`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Lints the whole project and display any found errors or warnings
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `npm run lint:fix`
+
+Automaticaly fixes the formatting errors in the whole project.
