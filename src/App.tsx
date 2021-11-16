@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.scss';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Stats } from '@react-three/drei';
 import Cube from './components/Cube';
+import Balls from './components/Balls';
 
 const App = function () {
   return (
@@ -32,6 +32,7 @@ const App = function () {
       <axesHelper scale={500} />
       <Stats />
       <Cube />
+      <Balls count={1} />
     </Canvas>
   );
 };
