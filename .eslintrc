@@ -3,10 +3,17 @@
   "rules": {
     "no-shadow": "off", // replaced by ts-eslint rule below
     "@typescript-eslint/no-shadow": "error",
-    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "react/jsx-filename-extension": [
+      2,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
     // note you must disable the base rule as it can report incorrect errors
     "no-use-before-define": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "off",
+    "@typescript-eslint/comma-dangle": "off",
+    "@typescript-eslint/indent": "off"
   },
   "parserOptions": {
     "project": "./tsconfig.json"
