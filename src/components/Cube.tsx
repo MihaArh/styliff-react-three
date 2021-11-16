@@ -1,6 +1,6 @@
 import Plane from './Plane';
 
-const Cube = () => {
+const Cube = function () {
   return (
     <>
       <Plane
