@@ -2,6 +2,13 @@ import * as THREE from 'three';
 import { useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 
+function checkWallCollision(position: number, size: number, speed: number) {
+  if (position + size >= 100 || position - size <= 0) {
+    return -speed;
+  }
+  return speed;
+}
+
 const Ball = function ({
   size,
   xPosition,
@@ -21,24 +28,22 @@ const Ball = function ({
 }) {
   const ref = useRef<THREE.Mesh>(null!);
   const [hovered, setHover] = useState(false);
+
   useFrame(() => {
-    if (xPosition + size >= 100 || xPosition - size <= 0) {
-      xSpeed = -xSpeed;
-    }
-    if (yPosition + size >= 100 || yPosition - size <= 0) {
-      ySpeed = -ySpeed;
-    }
-    if (zPosition + size >= 100 || zPosition - size <= 0) {
-      zSpeed = -zSpeed;
-    }
-    xPosition += xSpeed;
-    yPosition += ySpeed;
-    zPosition += zSpeed;
-    ref.current.position.set(xPosition, zPosition, yPosition);
+    // Check if ball hit any border
+    xSpeed = checkWallCollision(ref.current.position.x, size, xSpeed);
+    ySpeed = checkWallCollision(ref.current.position.y, size, ySpeed);
+    zSpeed = checkWallCollision(ref.current.position.z, size, zSpeed);
+
+    // Add speed to each coordinate
+    ref.current.position.x += xSpeed;
+    ref.current.position.y += ySpeed;
+    ref.current.position.z += zSpeed;
   });
   return (
     <mesh
       ref={ref}
+      position={[xPosition, yPosition, zPosition]}
       onPointerOver={() => setHover(true)}
       onPointerOut={() => setHover(false)}
     >
