@@ -47,7 +47,17 @@
     ]
   },
   "devDependencies": {
+    "@types/three": "^0.134.0",
     "eslint-config-airbnb": "^19.0.0",
     "eslint-config-airbnb-typescript": "^15.0.0"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint src/**/*.ts src/**/*.tsx",
+      "git add"
+    ]
   }
 }
