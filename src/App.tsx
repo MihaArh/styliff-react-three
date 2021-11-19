@@ -6,12 +6,7 @@ import Balls from './components/Balls';
 
 const App = function () {
   return (
-    <Canvas
-      mode="concurrent"
-      shadows
-      gl={{ alpha: false }}
-      camera={{ position: [200, 200, 200] }}
-    >
+    <Canvas camera={{ position: [200, 200, 200] }}>
       <OrbitControls
         addEventListener={undefined}
         hasEventListener={undefined}
