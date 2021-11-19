@@ -16,7 +16,8 @@
     "@typescript-eslint/indent": "off",
     "no-param-reassign": "off",
     "react/no-array-index-key": "off",
-    "operator-linebreak": "off"
+    "operator-linebreak": "off",
+    "func-names": "off"
   },
   "parserOptions": {
     "project": "./tsconfig.json"
